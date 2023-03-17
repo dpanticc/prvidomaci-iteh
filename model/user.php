@@ -18,4 +18,5 @@ public static function logIn($name, $password, mysqli $conn){
 }
 
 }
+
 ?>

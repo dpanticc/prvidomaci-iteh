@@ -31,7 +31,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     <!--<link rel="stylesheet--->
     <link rel="icon" href="image/logo.png" />
     <link rel="stylesheet" href="css/style.css">
-    <title>Fudbalski timovi</title>
+    <title>Login form</title>
 </head>
 
 <body>
