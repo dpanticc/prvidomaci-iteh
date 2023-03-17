@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Convergence&display=swap');
+
+
+body{
+    font-family: 'Convergence', 
+    sans-serif;
+    background-image: url("wallpaper.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1{
+    text-align: center;
+    color: #ffffff;
+    font-weight: 300;
+    margin: 0 0 40px;
+    font-weight: bold;
+}
+
+form {
+   
+    background: rgba(0,0,0,0.3);
+    padding: 30px;
+    max-width: 550px;
+    margin: 130px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    
+}
+
+form:hover {
+
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 30px;
+    max-width: 550px;
+    margin: 130px auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+
+input[type=text], input[type=password] {
+    color: white;
+    background-color: rgba(0,0,0,0.3);
+    width: 100%;
+    padding: 16px 20px;
+    margin: 0 auto;
+    display: flex;
+    border: 1px solid white;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+
+
+
+button {
+   background-color: #C2A260;
+    color: white;
+    padding: 7px 10px;
+    margin: 0 auto;
+    border: 0;
+    cursor: pointer;
+    width: 40%;
+    text-align: center;
+    border-radius: 10px;
+    display:grid;
+    font-size: x-large;
+    opacity: 0.9;
+}
+
+
+button:hover {
+    opacity: 0.7;
+
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 0;
+    padding-top: 24px
+}
+
+.container {
+    padding: 16px;
+}
+
+.main-div {
+    border-radius: 2px;
+    margin: 10px auto 30px;
+    max-width: 38%;
+    padding: 50px 70px 70px 71px
+}
