@@ -154,3 +154,5 @@ $("#openEditModal").click(function(){
         tds[5].textContent = obj.losses;
 
       }
+
+      

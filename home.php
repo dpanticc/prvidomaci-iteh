@@ -31,7 +31,7 @@ if ($result->num_rows == 0) {
     <title>Home</title>
 </head>
 <body>
-<table id = "tabela">
+<table id = "tabela" class="table sortable table-bordered table-hover ">
   <thead>
     <tr>
       <th>Team</th>
@@ -74,7 +74,8 @@ if ($result->num_rows == 0) {
       <button type="button" id="addButton" class="tableButtons" data-toggle="modal" data-target="#myModal">Add team</button>
       <button type="button" id="openEditModal" class="tableButtons">Edit</button>
       <button id="deleteButton" formmethod="post" class="tableButtons">Delete team</button>
-        
+      <button id="btnSort" class="tableButtons" onclick="sortTable()">Sort table</button>
+
     </td>
    </tr>
 </tfoot>
@@ -175,11 +176,45 @@ if ($result->num_rows == 0) {
         </div>
 
     </div>
-   
+    <a href="index.php" id="logoutbutton" class="label label-primary" style="font-size:30px; position: fixed; bottom:50px; right:50px; float:right; color:#C2A260">Logout</a>
+
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-jm+hk57lEqsrgj8tY2VX9Fue5nS1Mna03A5C7VeiVOcOMuI7EiLuLJY4ID6X9xRypce7ZUvOV8Ei3gD3wdbItw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
     <script src="js\script.js"></script>
 
+    <script>
+function sortTable() {
+  var table, rows, switching, i, x, y, shouldSwitch;
+  table = document.getElementById("tabela");
+  switching = true;
+  while (switching) {
+    switching = false;
+    rows = table.getElementsByTagName("tr");
+    for (i = 1; i < (rows.length - 1); i++) {
+      shouldSwitch = false;
+      x = rows[i].getElementsByTagName("td")[1];
+      y = rows[i + 1].getElementsByTagName("td")[1];
+      if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+        shouldSwitch= true;
+        break;
+      }
+      if (x.innerHTML.toLowerCase() == y.innerHTML.toLowerCase()) {
+        x = rows[i].getElementsByTagName("td")[5];
+        y = rows[i + 1].getElementsByTagName("td")[5];
+        if (parseInt(x.innerHTML) < parseInt(y.innerHTML)) {
+          shouldSwitch= true;
+          break;
+        }
+      }
+    }
+    if (shouldSwitch) {
+      rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+      switching = true;
+    }
+  }
+}
+</script>
 </body>
 </html>
